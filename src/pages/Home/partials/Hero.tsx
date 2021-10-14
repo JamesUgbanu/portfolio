@@ -6,14 +6,16 @@ import Typewriter from 'typewriter-effect';
 import Image from '../../../components/Image';
 
 const useStyles = makeStyles((theme: any) => ({
-    root: {},
+    root: {
+
+    },
     imageContainer: {
         background: '#000',
         borderRadius: "50%",
-        maxWidth: 450,
+        maxWidth: 400,
         overflow: "hidden",
         [theme.breakpoints.down('md')]: {
-            maxWidth: 400,
+            maxWidth: 250,
         },
     },
     image: {
@@ -28,6 +30,8 @@ const Hero = () => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true,
     });
+    const typedFirstFont = isMd ? "2em" : "1.5em";
+    const typedSecondFont = isMd ? "2.5em" : "1.5em";
 
     return (
         <div className={clsx(classes.root)}>
@@ -44,22 +48,22 @@ const Hero = () => {
                     md={6}
                     justifyContent="flex-start"
                 >
-                    <Box ml={isMd ? 12 : 2}>
-                    <Typewriter
-                        onInit={(typewriter) => {
-                            typewriter.typeString('<span style="font-size: 2em;">I am a </span>')
-                            typewriter.typeString('<strong style="font-size: 2.5em; color: #F2AE32">ReactJs Developer!</strong>')
-                                .pauseFor(300)
-                                .deleteChars(18)
-                                .typeString('<strong style="font-size: 2.5em; color: #F2AE32">React Native Developer!</strong>')
-                                .pauseFor(1000)
-                                .start();
-                        }}
-                        options={{
-                            autoStart: true,
-                            loop: true,
-                        }}
-                    />
+                    <Box>
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter.typeString(`<span style='font-size: ${typedFirstFont};'>Hi, I am </span>`)
+                                typewriter.typeString(`<strong style='font-size: ${typedSecondFont}; color: #F2AE32'>James Ugbanu!</strong>`)
+                                    .pauseFor(300)
+                                    .deleteChars(13)
+                                    .typeString(`<strong style='font-size: ${typedSecondFont}; color: #F2AE32'>a Software Developer!</strong>`)
+                                    .pauseFor(1000)
+                                    .start();
+                            }}
+                            options={{
+                                autoStart: true,
+                                loop: true,
+                            }}
+                        />
                     </Box>
                 </Grid>
                 <Grid

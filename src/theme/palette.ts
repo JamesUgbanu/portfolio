@@ -17,7 +17,7 @@ const palette = {
     },
     "secondary": {
       "light": "#ffb74d",
-      "main": "#f9b934",
+      "main": "rgb(15,15,45)",
       "dark": "#f57c00",
       "contrastText": "rgba(0, 0, 0, 0.87)"
     },

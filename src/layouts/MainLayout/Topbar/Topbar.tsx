@@ -1,4 +1,5 @@
 import { makeStyles } from '@mui/styles';
+import clsx from 'clsx';
 import {
   Toolbar,
   Hidden,
@@ -12,7 +13,9 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 import Image from '../../../components/Image';
 
 const useStyles = makeStyles((theme: any) => ({
-  root: {},
+  root: {
+    background: theme.palette.alternate.dark,
+  },
   flexGrow: {
     flexGrow: 1,
   },
@@ -71,7 +74,8 @@ const Topbar = ({ onSidebarOpen, ...rest }: { onSidebarOpen: () => void }) => {
   const classes = useStyles();
 
   return (
-    <Toolbar disableGutters className={classes.toolbar} {...rest}>
+    <div className={classes.root}>
+    <Toolbar disableGutters className={clsx(classes.toolbar)} {...rest}>
       <div className={classes.logoContainer}>
         <a href="/" title="James Ugbanu">
           <Image
@@ -125,6 +129,7 @@ const Topbar = ({ onSidebarOpen, ...rest }: { onSidebarOpen: () => void }) => {
               color="primary"
               component="a"
               href="#contact"
+              data-aos="zoom-in"
               className={classes.listItemButton}
             >
               Contact
@@ -140,10 +145,11 @@ const Topbar = ({ onSidebarOpen, ...rest }: { onSidebarOpen: () => void }) => {
           color="primary"
           size="large"
         >
-          <MenuIcon fontSize="large"/>
+          <MenuIcon fontSize="large" />
         </IconButton>
       </Hidden>
     </Toolbar>
+    </div>
   );
 };
 

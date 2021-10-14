@@ -8,8 +8,6 @@ import Sidebar from './Sidebar';
 
 const useStyles = makeStyles((theme: any) => ({
   root: {
-    height: '100%',
-    background: theme.palette.alternate.dark
   },
 }));
 
