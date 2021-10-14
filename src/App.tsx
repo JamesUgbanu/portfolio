@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { useRoutes } from 'react-router-dom';
+import AOS from 'aos';
+import theme from './theme';
+import routes from './routes';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
+import 'aos/dist/aos.css';
 
-function App() {
+
+const App = () => {
+  const routing = useRoutes(routes);
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      delay: 50,
+      duration: 500,
+      easing: 'ease-in-out',
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {routing}
+    </ThemeProvider>
   );
 }
 
