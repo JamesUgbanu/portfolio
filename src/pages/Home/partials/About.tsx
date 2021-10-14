@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Stack, Chip, Box } from '@mui/material';
 
 const useStyles = makeStyles((theme: any) => ({
     root: {
@@ -43,10 +43,27 @@ const About = () => {
                         >
                             James is a diligent software engineer with 6 years of experience in commercial application development.
                             He build innovative and cutting edge business solutions for the impressive suite of clients within its
-                            global reach. He has worked in several industry segments such as telecommunication, consulting, internet
+                            global reach. He has worked in several industry such as telecommunication, consulting, internet
                             service provider. He his also an avid open-source developer.
                         </Typography>
                     </Grid>
+                </Grid>
+                <Grid item xs={12} data-aos="fade-up" data-aos-duration="1000">
+                    <Box mb={2}>
+                        <Typography
+                            variant="h5"
+                            align="center"
+                            color="textSecondary"
+                        >
+                            Technologies
+                        </Typography>
+                    </Box>
+                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
+                        {['ReactJs', 'React Native', 'JavaScript', 'TypeScript', 'PHP', 'WordPress', 'ExpressJs', 'Redux', 'Mocha',
+                            'Chai', 'Wordpress API', 'Expo', 'testing-library-react'].map((tech, i) => (
+                                <Chip key={i} label={tech} variant="outlined" color="primary" />
+                            ))}
+                    </Stack>
                 </Grid>
             </Grid>
         </div>

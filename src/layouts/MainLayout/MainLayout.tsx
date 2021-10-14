@@ -5,6 +5,7 @@ import { makeStyles } from '@mui/styles';
 import { useMediaQuery } from '@mui/material';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
 
 const useStyles = makeStyles((theme: any) => ({
   root: {
@@ -48,6 +49,7 @@ const Main = ({ children }: { children: ReactNode }) => {
         {/* <Divider /> */}
         {children}
       </main>
+      <Footer />
     </div>
   );
 };

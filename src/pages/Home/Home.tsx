@@ -2,6 +2,7 @@ import { makeStyles } from '@mui/styles';
 import { grey } from '@mui/material/colors';
 import Hero from './partials/Hero';
 import About from './partials/About';
+import Socials from './partials/Socials';
 import Section from '../../components/Section'
 
 const useStyles = makeStyles((theme: any) => ({
@@ -11,7 +12,8 @@ const useStyles = makeStyles((theme: any) => ({
     },
     shape: {
         background: theme.palette.alternate.dark,
-        borderBottomRightRadius: '40%',
+        borderBottomRightRadius: '20%',
+        borderBottomLeftRadius: '20%',
         borderBottom: `1px solid ${grey[200]}`,
         [theme.breakpoints.down('md')]: {
             height: 360
@@ -24,6 +26,7 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
+            <Socials />
             <div className={classes.shape}>
                 <Section>
                     <Hero />
