@@ -85,7 +85,7 @@ const Hero = () => {
                             src="/james.png"
                             alt="James Ugbanu"
                             className={classes.image}
-                            lazy={true}
+                            lazy={false}
                         />
                     </Box>
                 </Grid>

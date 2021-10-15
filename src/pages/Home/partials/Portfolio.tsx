@@ -58,7 +58,7 @@ const Portfolio = () => {
                         <Image
                             src={item.img}
                             alt={item.name}
-                            lazy={true}
+                            lazy={false}
                             className={classes.image}
                         />
                         <ImageListItemBar
