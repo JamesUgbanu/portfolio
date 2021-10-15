@@ -57,7 +57,7 @@ const SidebarNav = ({ onClose, className, ...rest } : { onClose: () => void, cla
           variant="h6"
           color="primary"
           component="a"
-          href="/about"
+          href="#about"
           className={classes.listItemLink}
         >
           About
@@ -68,7 +68,7 @@ const SidebarNav = ({ onClose, className, ...rest } : { onClose: () => void, cla
           variant="h6"
           color="primary"
           component="a"
-          href="/portfolio"
+          href="#portfolio"
           className={classes.listItemLink}
         >
           Portfolio
@@ -82,7 +82,7 @@ const SidebarNav = ({ onClose, className, ...rest } : { onClose: () => void, cla
           fullWidth
           component="a"
           target="blank"
-          href="/contact"
+          href="#contact"
         >
           Contact
         </Button>

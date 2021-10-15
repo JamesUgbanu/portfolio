@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: any) => ({
         },
     },
     image: {
-        marginTop: -30,
+        marginTop: -20,
     },
 }));
 
@@ -46,9 +46,9 @@ const Hero = () => {
                     alignItems="center"
                     xs={12}
                     md={6}
-                    justifyContent="flex-start"
+                    justifyContent={isMd ? "flex-start" : "center"}
                 >
-                    <Box>
+                    <Box  mt={isMd ? -5 : -2}>
                         <Typewriter
                             onInit={(typewriter) => {
                                 typewriter.typeString(`<span style='font-size: ${typedFirstFont};'>Hi, I am </span>`)
@@ -79,6 +79,7 @@ const Hero = () => {
                         data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000"
+                        mt={isMd ? -5 : -2}
                     >
                         <Image
                             src="/james.png"

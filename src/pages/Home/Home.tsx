@@ -3,12 +3,16 @@ import { grey } from '@mui/material/colors';
 import Hero from './partials/Hero';
 import About from './partials/About';
 import Socials from './partials/Socials';
-import Section from '../../components/Section'
+import Section from '../../components/Section';
+import Portfolio from './partials/Portfolio';
 
 const useStyles = makeStyles((theme: any) => ({
     root: {
         height: '100%',
         width: '100%',
+    },
+    background: {
+        background: theme.palette.alternate.dark,
     },
     shape: {
         background: theme.palette.alternate.dark,
@@ -26,14 +30,17 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
-            <Socials />
             <div className={classes.shape}>
                 <Section>
+                    <Socials />
                     <Hero />
                 </Section>
             </div>
             <Section>
                 <About />
+            </Section>
+            <Section className={classes.background} fullWidth={true}>
+                <Portfolio />
             </Section>
         </div>
     );

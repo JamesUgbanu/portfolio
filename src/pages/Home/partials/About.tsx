@@ -1,5 +1,6 @@
 import { makeStyles } from '@mui/styles';
 import { Grid, Typography, Stack, Chip, Box } from '@mui/material';
+import { useTheme, useMediaQuery } from '@mui/material';
 
 const useStyles = makeStyles((theme: any) => ({
     root: {
@@ -10,9 +11,13 @@ const useStyles = makeStyles((theme: any) => ({
 
 const About = () => {
     const classes = useStyles();
+    const theme = useTheme();
+    const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+        defaultMatches: true,
+    });
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id="about">
             <Grid
                 container
                 spacing={4}
@@ -48,7 +53,9 @@ const About = () => {
                         </Typography>
                     </Grid>
                 </Grid>
-                <Grid item xs={12} data-aos="fade-up" data-aos-duration="1000">
+                <Grid item xs={12} data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500">
                     <Box mb={2}>
                         <Typography
                             variant="h5"
@@ -61,7 +68,7 @@ const About = () => {
                     <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
                         {['ReactJs', 'React Native', 'JavaScript', 'TypeScript', 'PHP', 'WordPress', 'ExpressJs', 'Redux', 'Mocha',
                             'Chai', 'Wordpress API', 'Expo', 'testing-library-react'].map((tech, i) => (
-                                <Chip key={i} label={tech} variant="outlined" color="primary" />
+                                <Chip size={isMd ? "medium" : "small"} key={i} label={tech} variant="outlined" color="primary" />
                             ))}
                     </Stack>
                 </Grid>

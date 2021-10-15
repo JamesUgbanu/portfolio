@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: any) => ({
 }));
 type SectionProps = {
     children: ReactNode,
-    fullWidth?: string,
+    fullWidth?: boolean,
     narrow?: string,
     disablePadding?: boolean,
     className?: string,

@@ -17,7 +17,7 @@ const Social = () => {
     const classes = useStyles();
 
     return (
-        <div style={{ position: "fixed", top: 100, left: 15 }}>
+        <div style={{ position: "absolute", top: 150, left: 15 }}>
             <List className={classes.root} data-aos="fade-right">
                 <ListItemButton disableGutters
                     component="a"
