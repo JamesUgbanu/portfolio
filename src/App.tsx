@@ -8,7 +8,6 @@ import routes from './routes';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
 import 'aos/dist/aos.css';
 
-
 const App = () => {
   const routing = useRoutes(routes);
 
@@ -27,6 +26,6 @@ const App = () => {
       {routing}
     </ThemeProvider>
   );
-}
+};
 
 export default App;

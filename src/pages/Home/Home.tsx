@@ -7,43 +7,43 @@ import Section from '../../components/Section';
 import Portfolio from './partials/Portfolio';
 
 const useStyles = makeStyles((theme: any) => ({
-    root: {
-        height: '100%',
-        width: '100%',
+  root: {
+    height: '100%',
+    width: '100%',
+  },
+  background: {
+    background: theme.palette.alternate.dark,
+  },
+  shape: {
+    background: theme.palette.alternate.dark,
+    borderBottomRightRadius: '20%',
+    borderBottomLeftRadius: '20%',
+    borderBottom: `1px solid ${grey[200]}`,
+    [theme.breakpoints.down('md')]: {
+      height: 360,
     },
-    background: {
-        background: theme.palette.alternate.dark,
-    },
-    shape: {
-        background: theme.palette.alternate.dark,
-        borderBottomRightRadius: '20%',
-        borderBottomLeftRadius: '20%',
-        borderBottom: `1px solid ${grey[200]}`,
-        [theme.breakpoints.down('md')]: {
-            height: 360
-        },
-    },
+  },
 }));
 
 const Home = () => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <div className={classes.root}>
-            <div className={classes.shape}>
-                <Section>
-                    <Socials />
-                    <Hero />
-                </Section>
-            </div>
-            <Section>
-                <About />
-            </Section>
-            <Section className={classes.background} fullWidth={true}>
-                <Portfolio />
-            </Section>
-        </div>
-    );
-}
+  return (
+    <div className={classes.root}>
+      <div className={classes.shape}>
+        <Section>
+          <Socials />
+          <Hero />
+        </Section>
+      </div>
+      <Section>
+        <About />
+      </Section>
+      <Section className={classes.background} fullWidth={true}>
+        <Portfolio />
+      </Section>
+    </div>
+  );
+};
 
 export default Home;
